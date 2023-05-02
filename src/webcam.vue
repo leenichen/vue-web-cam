@@ -42,6 +42,13 @@ export default {
       type: Boolean,
       default: true
     },
+    resolution: {
+      type: Object,
+      default: null,
+      validator: value => {
+        return value.height && value.width;
+      }
+    }
   },
 
   data() {
@@ -217,10 +224,11 @@ export default {
     testMediaAccess() {
       let constraints = { video: true };
 
-      constraints.video = {};
-      constraints.video.width = {ideal: 4096};
-      constraints.video.height = {ideal: 4096};
-      console.log(constraints)
+      if (this.resolution) {
+        constraints.video = {};
+        constraints.video.width = {ideal: this.resolution.width};
+        constraints.video.height = {ideal: this.resolution.heigth};
+      }
 
       navigator.mediaDevices
         .getUserMedia(constraints)
@@ -241,8 +249,10 @@ export default {
     loadCamera(device) {
       let constraints = { video: { deviceId: { exact: device } } };
 
-      constraints.video.width = {ideal: 4096};
-      constraints.video.height = {ideal: 4096};
+      if (this.resolution) {
+        constraints.video.width = {ideal: this.resolution.width};
+        constraints.video.height = {ideal: this.resolution.height};
+      }
 
       navigator.mediaDevices
         .getUserMedia(constraints)
