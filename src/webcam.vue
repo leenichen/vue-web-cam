@@ -226,8 +226,8 @@ export default {
 
       if (this.resolution) {
         constraints.video = {};
-        constraints.video.height = { ideal: 4096};
-        constraints.video.width = { ideal: 2160};
+        constraints.video.width = { ideal: 4096};
+        constraints.video.height = { ideal: 2160};
       }
       console.log(constraints)
 
