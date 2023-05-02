@@ -243,6 +243,7 @@ export default {
 
       constraints.video.height = { ideal: 4096};
       constraints.video.width = { ideal: 2160};
+      console.log(constraints)
 
       navigator.mediaDevices
         .getUserMedia(constraints)
