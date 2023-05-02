@@ -250,8 +250,8 @@ export default {
       let constraints = { video: { deviceId: { exact: device } } };
 
       if (this.resolution) {
-        constraints.video.width = {ideal: this.resolution.width};
-        constraints.video.height = {ideal: this.resolution.height};
+        constraints.video.width = {min: this.resolution.width};
+        constraints.video.height = {min: this.resolution.height};
       }
 
       navigator.mediaDevices
