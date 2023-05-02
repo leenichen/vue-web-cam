@@ -224,11 +224,9 @@ export default {
     testMediaAccess() {
       let constraints = { video: true };
 
-      if (this.resolution) {
-        constraints.video = {};
-        constraints.video.width = { ideal: 4096};
-        constraints.video.height = { ideal: 2160};
-      }
+      constraints.video = {};
+      constraints.video.width = { ideal: 4096};
+      constraints.video.height = { ideal: 2160};
       console.log(constraints)
 
       navigator.mediaDevices
@@ -250,10 +248,8 @@ export default {
     loadCamera(device) {
       let constraints = { video: { deviceId: { exact: device } } };
 
-      if (this.resolution) {
-        constraints.video.height = this.resolution.height;
-        constraints.video.width = this.resolution.width;
-      }
+      constraints.video.width = { ideal: 4096};
+      constraints.video.height = { ideal: 2160};
 
       navigator.mediaDevices
         .getUserMedia(constraints)
