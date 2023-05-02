@@ -218,8 +218,8 @@ export default {
       let constraints = { video: true };
 
       constraints.video = {};
-      // constraints.video.width = { ideal: 4096};
-      // constraints.video.height = { ideal: 2160};
+      constraints.video.width = {ideal: 4096};
+      constraints.video.height = {ideal: 4096};
       console.log(constraints)
 
       navigator.mediaDevices
@@ -241,8 +241,8 @@ export default {
     loadCamera(device) {
       let constraints = { video: { deviceId: { exact: device } } };
 
-      // constraints.video.width = { ideal: 4096};
-      // constraints.video.height = { ideal: 2160};
+      constraints.video.width = {ideal: 4096};
+      constraints.video.height = {ideal: 4096};
 
       navigator.mediaDevices
         .getUserMedia(constraints)
