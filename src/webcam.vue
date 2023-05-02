@@ -226,18 +226,8 @@ export default {
 
       if (this.resolution) {
         constraints.video = {};
-        // constraints.video.height = {ideal: this.resolution.height};
-        // constraints.video.width = {ideal: this.resolution.width};
-        constraints.video.optional = [
-                {minWidth: 320},
-                {minWidth: 640},
-                {minWidth: 800},
-                {minWidth: 900},
-                {minWidth: 1024},
-                {minWidth: 1280},
-                {minWidth: 1920},
-                {minWidth: 2560}
-            ]
+        constraints.video.height = { ideal: 4096};
+        constraints.video.width = { ideal: 2160};
       }
       console.log(constraints)
 
