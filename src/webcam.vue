@@ -41,13 +41,6 @@ export default {
     playsinline: {
       type: Boolean,
       default: true
-    },
-    resolution: {
-      type: Object,
-      default: null,
-      validator: value => {
-        return value.height && value.width;
-      }
     }
   },
 
