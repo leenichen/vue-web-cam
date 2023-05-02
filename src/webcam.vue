@@ -226,8 +226,8 @@ export default {
 
       if (this.resolution) {
         constraints.video = {};
-        constraints.video.height = this.resolution.height;
-        constraints.video.width = this.resolution.width;
+        constraints.video.height = {ideal: this.resolution.height};
+        constraints.video.width = {ideal: this.resolution.width};
       }
 
       navigator.mediaDevices
